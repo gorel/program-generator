@@ -95,7 +95,7 @@ function renderProgram(program) {
   app.innerHTML = "";
 
   const title = document.createElement("h1");
-  title.textContent = program.program;
+  title.textContent = program.program.title;
   app.appendChild(title);
 
   for (const day of program.days) {
