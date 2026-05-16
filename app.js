@@ -1,28 +1,3 @@
-// app.js
-//
-// Browser-based replacement for generate.py
-//
-// Expected project structure:
-//
-// .
-// ├── index.html
-// ├── app.js
-// ├── data/
-// │   ├── movements.csv
-// │   ├── exercises.csv
-// │   └── programs/
-// │       └── hypertrophy.yaml
-//
-// Required libraries in index.html:
-//
-// <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
-// <script src="https://cdn.jsdelivr.net/npm/js-yaml@4/dist/js-yaml.min.js"></script>
-// <script src="app.js"></script>
-//
-// Required HTML:
-//
-// <div id="app"></div>
-
 const MOVEMENTS_FILE = "data/movements.csv";
 const EXERCISES_FILE = "data/exercises.csv";
 const PROGRAMS_DIR = "data/programs";
@@ -223,6 +198,36 @@ function renderStats(program, stats, movementTargets) {
   app.appendChild(statsSection);
 }
 
+async function renderProgramList() {
+  const app = document.getElementById("app");
+
+  const response = await fetch("data/programs.json");
+
+  if (!response.ok) {
+    throw new Error("Failed to load programs.json");
+  }
+
+  const programs = await response.json();
+
+  app.innerHTML = `
+    <h1>Programs</h1>
+
+    <ul class="program-list">
+      ${programs
+        .map(
+          (program) => `
+            <li>
+              <a href="?program=${program.id}">
+                ${program.name}
+              </a>
+            </li>
+          `,
+        )
+        .join("")}
+    </ul>
+  `;
+}
+
 async function main() {
   try {
     const params = new URLSearchParams(window.location.search);
@@ -232,7 +237,8 @@ async function main() {
     const programName = params.get("program");
 
     if (!programName) {
-      throw new Error("Missing ?program= query parameter");
+      await renderProgramList();
+      return;
     }
 
     const [movementTargets, exerciseMapping, program] = await Promise.all([
