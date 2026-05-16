@@ -1,0 +1,56 @@
+body {
+  font-family: sans-serif;
+  margin: 40px;
+  line-height: 1.5;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 24px;
+}
+
+th,
+td {
+  border: 1px solid #ccc;
+  padding: 8px;
+  text-align: left;
+}
+
+h1,
+h2 {
+  margin-top: 32px;
+}
+
+@page {
+  size: letter portrait;
+  margin: 0.4in;
+}
+
+@media print {
+  body {
+    margin: 0;
+    font-size: 11pt;
+  }
+
+  .day {
+    page-break-after: always;
+    break-after: page;
+  }
+
+  table {
+    page-break-inside: avoid;
+  }
+
+  tr {
+    page-break-inside: avoid;
+  }
+
+  input {
+    border: none;
+  }
+
+  button {
+    display: none;
+  }
+}

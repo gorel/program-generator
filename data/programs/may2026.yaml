@@ -1,0 +1,90 @@
+program:
+  title: "May 2026"
+
+days:
+  - name: "UPPER"
+    exercises:
+      - name: "Barbell Bench Press"
+        sets: 2
+        reps: "3-5"
+      - name: "EZ-Bar Curl"
+        sets: 3
+        reps: "12-15"
+      - name: "Overhead Cable Triceps Extension"
+        sets: 3
+        reps: "8-10"
+      - name: "T-Bar Row"
+        sets: 2
+        reps: "6-8"
+      - name: "Barbell Overhead Press"
+        sets: 2
+        reps: "6-8"
+      - name: "Pullups"
+        sets: 2
+        reps: "8-10"
+      - name: "Weighted Knee Raises"
+        sets: 2
+        reps: "15-20"
+
+  - name: "LOWER"
+    exercises:
+      - name: "Barbell Squat"
+        sets: 2
+        reps: "3-5"
+      - name: "Leg Curl"
+        sets: 3
+        reps: "8-10"
+      - name: "Leg Extension"
+        sets: 3
+        reps: "8-10"
+      - name: "Barbell RDL"
+        sets: 2
+        reps: "6-8"
+      - name: "Standing Calf Raise"
+        sets: 3
+        reps: "12-15"
+      - name: "Cable Crunch"
+        sets: 2
+        reps: "15-20"
+
+  - name: "PUSH"
+    exercises:
+      - name: "45° Incline Dumbbell Press"
+        sets: 3
+        reps: "8-10"
+      - name: "Dips"
+        sets: 3
+        reps: "8-10"
+      - name: "Dumbbell Overhead Extension"
+        sets: 3
+        reps: "8-10"
+      - name: "Dumbbell Lat Raise"
+        sets: 3
+        reps: "15-20"
+      - name: "Seated Dumbbell Overhead Press"
+        sets: 3
+        reps: "8-10"
+      - name: "Ab Wheel Rollout"
+        sets: 2
+        reps: "15-20"
+
+  - name: "PULL"
+    exercises:
+      - name: "Deadlift"
+        sets: 1
+        reps: "3-5"
+      - name: "One-Arm Lat Pulldown"
+        sets: 3
+        reps: "8-10"
+      - name: "Incline Dumbbell Curl"
+        sets: 3
+        reps: "8-10"
+      - name: "Chest-Supported Dumbbell Row"
+        sets: 3
+        reps: "8-10"
+      - name: "Seated Rear Delt Fly"
+        sets: 3
+        reps: "10-12"
+      - name: "Neutral-Grip Chin-Up"
+        sets: 2
+        reps: "AMRAP"

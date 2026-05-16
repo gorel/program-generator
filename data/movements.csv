@@ -1,0 +1,12 @@
+movement,low,high
+Hinge,4,10
+Squat,4,10
+Press,4,8
+Pull,6,12
+Push,6,12
+Row,4,8
+Shoulders,6,12,
+Curl,2,8
+Extension,2,8
+Abs,4,6
+Calves,2,8
