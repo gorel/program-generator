@@ -102,10 +102,19 @@ function renderProgram(program) {
     const section = document.createElement("section");
     section.className = "day";
 
-    const heading = document.createElement("h2");
-    heading.textContent = day.name;
+    const maxSets = Math.max(...day.exercises.map((e) => Number(e.sets)));
 
-    section.appendChild(heading);
+    const setHeaders = Array.from(
+      { length: maxSets },
+      (_, i) => `<th>Set ${i + 1}</th>`,
+    ).join("");
+
+    const wrapper = document.createElement("div");
+    wrapper.className = "day-wrapper";
+
+    const label = document.createElement("div");
+    label.className = "day-label";
+    label.textContent = day.name;
 
     const table = document.createElement("table");
 
@@ -115,6 +124,10 @@ function renderProgram(program) {
         <th>Exercise</th>
         <th>Sets</th>
         <th>Reps</th>
+        <th>Weight</th>
+        ${setHeaders}
+        <th>Notes</th>
+        <th>Increment</th>
       </tr>
     `;
 
@@ -124,11 +137,20 @@ function renderProgram(program) {
 
     for (const exercise of day.exercises) {
       const tr = document.createElement("tr");
+      const sets = Number(exercise.sets);
+
+      const setCells = Array.from({ length: maxSets }, (_, i) =>
+        i < sets ? `<td></td>` : `<td class="inactive"></td>`,
+      ).join("");
 
       tr.innerHTML = `
         <td>${exercise.name}</td>
-        <td>${exercise.sets}</td>
-        <td>${exercise.reps ?? ""}</td>
+        <td class="center">${exercise.sets}</td>
+        <td class="center">${exercise.reps ?? ""}</td>
+        <td></td>
+        ${setCells}
+        <td></td>
+        <td></td>
       `;
 
       tbody.appendChild(tr);
@@ -136,7 +158,9 @@ function renderProgram(program) {
 
     table.appendChild(tbody);
 
-    section.appendChild(table);
+    wrapper.appendChild(label);
+    wrapper.appendChild(table);
+    section.appendChild(wrapper);
 
     app.appendChild(section);
   }

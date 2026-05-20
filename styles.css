@@ -4,24 +4,76 @@ body {
   line-height: 1.5;
 }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 24px;
-}
-
-th,
-td {
-  border: 1px solid #ccc;
-  padding: 8px;
-  text-align: left;
-}
-
 h1,
 h2 {
   margin-top: 32px;
 }
 
+/* ── Day wrapper: rotated label + table side-by-side ── */
+.day-wrapper {
+  display: flex;
+  align-items: stretch;
+  margin-bottom: 24px;
+  border: 2px solid #999;
+}
+
+.day-label {
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 8px 6px;
+  background: #d9d9d9;
+  border-right: 2px solid #999;
+  white-space: nowrap;
+  min-width: 28px;
+}
+
+/* ── Table ── */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  flex: 1;
+}
+
+thead tr {
+  background: #d9d9d9;
+}
+
+th {
+  border: 1px solid #999;
+  padding: 6px 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 0.85rem;
+}
+
+th:first-child {
+  text-align: left;
+}
+
+td {
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  text-align: left;
+  font-size: 0.85rem;
+}
+
+td.center {
+  text-align: center;
+}
+
+td.inactive {
+  background: #c0c0c0;
+}
+
+/* Alternate row shading */
+tbody tr:nth-child(even) td:not(.inactive) {
+  background: #f2f2f2;
+}
+
+/* ── Program list ── */
 .program-list {
   list-style: none;
   padding: 0;
@@ -36,15 +88,22 @@ h2 {
   font-size: 1.2rem;
 }
 
+/* ── Print ── */
 @page {
-  size: letter portrait;
+  size: letter landscape;
   margin: 0.4in;
 }
 
 @media print {
   body {
     margin: 0;
-    font-size: 11pt;
+    font-size: 9pt;
+  }
+
+  h1 {
+    font-size: 13pt;
+    margin-top: 0;
+    margin-bottom: 10pt;
   }
 
   .day {
@@ -52,7 +111,7 @@ h2 {
     break-after: page;
   }
 
-  table {
+  .day-wrapper {
     page-break-inside: avoid;
   }
 
