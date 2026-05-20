@@ -33,7 +33,7 @@ h2 {
 /* ── Column widths ── */
 col.col-exercise  { width: auto; }
 col.col-sets      { width: 42px; }
-col.col-reps      { width: 52px; }
+col.col-reps      { width: 70px; }
 col.col-weight    { width: 60px; }
 col.col-set       { width: 80px; }
 col.col-notes     { width: 220px; }
