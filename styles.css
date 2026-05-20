@@ -30,6 +30,15 @@ h2 {
   min-width: 28px;
 }
 
+/* ── Column widths ── */
+col.col-exercise  { width: auto; }
+col.col-sets      { width: 42px; }
+col.col-reps      { width: 52px; }
+col.col-weight    { width: 60px; }
+col.col-set       { width: 80px; }
+col.col-notes     { width: 220px; }
+col.col-increment { width: 72px; }
+
 /* ── Table ── */
 table {
   width: 100%;
@@ -73,19 +82,30 @@ tbody tr:nth-child(even) td:not(.inactive) {
   background: #f2f2f2;
 }
 
-/* ── Program list ── */
-.program-list {
-  list-style: none;
-  padding: 0;
-}
-
-.program-list li {
-  margin-bottom: 12px;
-}
-
-.program-list a {
+/* ── Program index ── */
+.program-link {
   text-decoration: none;
   font-size: 1.2rem;
+  font-weight: bold;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.stats-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px 0;
+}
+
+.stats-list li {
+  font-size: 0.9rem;
+  margin-bottom: 2px;
+}
+
+.missing {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 24px;
 }
 
 /* ── Print ── */

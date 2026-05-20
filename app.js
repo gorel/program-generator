@@ -118,6 +118,23 @@ function renderProgram(program) {
 
     const table = document.createElement("table");
 
+    const setCols = Array.from(
+      { length: maxSets },
+      () => `<col class="col-set">`,
+    ).join("");
+
+    table.innerHTML = `
+      <colgroup>
+        <col class="col-exercise">
+        <col class="col-sets">
+        <col class="col-reps">
+        <col class="col-weight">
+        ${setCols}
+        <col class="col-notes">
+        <col class="col-increment">
+      </colgroup>
+    `;
+
     const thead = document.createElement("thead");
     thead.innerHTML = `
       <tr>
@@ -166,63 +183,8 @@ function renderProgram(program) {
   }
 }
 
-function renderStats(program, stats, movementTargets) {
-  const app = document.getElementById("app");
 
-  const statsSection = document.createElement("section");
-  statsSection.className = "stats";
-
-  const heading = document.createElement("h2");
-  heading.textContent = "Movement Summary";
-
-  statsSection.appendChild(heading);
-
-  const list = document.createElement("ul");
-
-  for (const [movement, sets] of Object.entries(stats.summary)) {
-    const li = document.createElement("li");
-
-    const target = movementTargets[movement];
-
-    let text = `${movement}: ${sets} sets`;
-
-    if (target) {
-      const good = sets >= target.low && sets <= target.high;
-
-      text += ` (target: ${target.low}-${target.high})`;
-
-      text += good ? " ✅" : " ❌";
-    }
-
-    li.textContent = text;
-
-    list.appendChild(li);
-  }
-
-  statsSection.appendChild(list);
-
-  if (stats.missingExercises.length > 0) {
-    const missingHeading = document.createElement("h3");
-    missingHeading.textContent = "Missing Exercises";
-
-    statsSection.appendChild(missingHeading);
-
-    const missingList = document.createElement("ul");
-
-    for (const exercise of stats.missingExercises) {
-      const li = document.createElement("li");
-      li.textContent = exercise;
-
-      missingList.appendChild(li);
-    }
-
-    statsSection.appendChild(missingList);
-  }
-
-  app.appendChild(statsSection);
-}
-
-async function renderProgramList() {
+async function renderProgramList(movementTargets, exerciseMapping) {
   const app = document.getElementById("app");
 
   const response = await fetch("data/programs.json");
@@ -233,49 +195,70 @@ async function renderProgramList() {
 
   const programs = await response.json();
 
-  app.innerHTML = `
-    <h1>Programs</h1>
+  app.innerHTML = `<h1>Programs</h1>`;
 
-    <ul class="program-list">
-      ${programs
-        .map(
-          (program) => `
-            <li>
-              <a href="?program=${program.id}">
-                ${program.name}
-              </a>
-            </li>
-          `,
-        )
-        .join("")}
-    </ul>
-  `;
+  for (const entry of programs) {
+    const program = await loadProgram(entry.id);
+    const stats = calculateStats(program, movementTargets, exerciseMapping);
+
+    const section = document.createElement("section");
+
+    const link = document.createElement("a");
+    link.href = `?program=${entry.id}`;
+    link.textContent = entry.name;
+    link.className = "program-link";
+
+    section.appendChild(link);
+
+    const list = document.createElement("ul");
+    list.className = "stats-list";
+
+    for (const [movement, sets] of Object.entries(stats.summary)) {
+      const li = document.createElement("li");
+      const target = movementTargets[movement];
+      let text = `${movement}: ${sets} sets`;
+
+      if (target) {
+        const good = sets >= target.low && sets <= target.high;
+        text += ` (target: ${target.low}–${target.high}) ${good ? "✅" : "❌"}`;
+      }
+
+      li.textContent = text;
+      list.appendChild(li);
+    }
+
+    section.appendChild(list);
+
+    if (stats.missingExercises.length > 0) {
+      const missing = document.createElement("p");
+      missing.className = "missing";
+      missing.textContent = `Missing mappings: ${stats.missingExercises.join(", ")}`;
+      section.appendChild(missing);
+    }
+
+    app.appendChild(section);
+  }
 }
 
 async function main() {
   try {
     const params = new URLSearchParams(window.location.search);
 
-    // Example:
-    // index.html?program=hypertrophy
     const programName = params.get("program");
 
+    const [movementTargets, exerciseMapping] = await Promise.all([
+      loadMovementTargets(),
+      loadExerciseMapping(),
+    ]);
+
     if (!programName) {
-      await renderProgramList();
+      await renderProgramList(movementTargets, exerciseMapping);
       return;
     }
 
-    const [movementTargets, exerciseMapping, program] = await Promise.all([
-      loadMovementTargets(),
-      loadExerciseMapping(),
-      loadProgram(programName),
-    ]);
+    const program = await loadProgram(programName);
 
     renderProgram(program);
-
-    const stats = calculateStats(program, movementTargets, exerciseMapping);
-
-    renderStats(program, stats, movementTargets);
   } catch (err) {
     console.error(err);
 
