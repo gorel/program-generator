@@ -78,7 +78,7 @@ td.inactive {
 }
 
 /* Alternate row shading */
-tbody tr:nth-child(even) td:not(.inactive) {
+tbody tr:nth-child(even) td:not(.inactive):not(.cell-good):not(.cell-bad) {
   background: #f2f2f2;
 }
 
@@ -117,8 +117,10 @@ tbody tr:nth-child(even) td:not(.inactive) {
 .index-table th.sorted-asc::after  { content: " ↑"; }
 .index-table th.sorted-desc::after { content: " ↓"; }
 
-.cell-good { background: #d4edda; }
-.cell-bad  { background: #f8d7da; }
+.cell-good,
+.targets-table td.cell-good { background: #d4edda; }
+.cell-bad,
+.targets-table td.cell-bad  { background: #f8d7da; }
 
 /* ── Filter panel ── */
 .filter-panel {
@@ -147,6 +149,229 @@ tbody tr:nth-child(even) td:not(.inactive) {
 
 .filter-panel input[type="text"] {
   width: 140px;
+}
+
+/* ── Nav link ── */
+.nav-link {
+  font-size: 0.85rem;
+  font-weight: normal;
+  margin-left: 16px;
+  text-decoration: none;
+  color: #555;
+}
+
+.nav-link:hover {
+  text-decoration: underline;
+}
+
+/* ── Builder ── */
+.builder-section {
+  margin-bottom: 32px;
+}
+
+.builder-section h2 {
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+
+.hint {
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.field-row {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.field-row label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.8rem;
+  font-weight: bold;
+  gap: 4px;
+}
+
+.field-row input {
+  font-size: 0.9rem;
+  padding: 5px 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 220px;
+}
+
+.day-block {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  background: #fafafa;
+}
+
+.day-block-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.day-name {
+  font-size: 0.9rem;
+  font-weight: bold;
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 200px;
+}
+
+.exercise-row {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.ex-select {
+  width: 200px;
+  font-size: 0.85rem;
+  padding: 4px 6px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.ex-custom-name {
+  width: 160px;
+  font-size: 0.85rem;
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.unknown-exercise .ex-custom-name {
+  border-color: #e8a000;
+  background: #fffbe6;
+}
+
+.ex-sets {
+  font-size: 0.85rem;
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 70px;
+}
+
+.ex-reps {
+  font-size: 0.85rem;
+  padding: 4px 8px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 110px;
+}
+
+.btn-add,
+.btn-add-exercise {
+  font-size: 0.85rem;
+  padding: 5px 12px;
+  border: 1px dashed #999;
+  border-radius: 3px;
+  background: #fff;
+  cursor: pointer;
+  margin-top: 4px;
+}
+
+.btn-add:hover,
+.btn-add-exercise:hover {
+  background: #f0f0f0;
+}
+
+.btn-remove {
+  font-size: 1rem;
+  line-height: 1;
+  padding: 2px 7px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background: #fff;
+  cursor: pointer;
+  color: #888;
+}
+
+.btn-remove:hover {
+  background: #fee;
+  color: #c00;
+  border-color: #c00;
+}
+
+.targets-table {
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.targets-table th,
+.targets-table td {
+  border: 1px solid #ccc;
+  padding: 5px 10px;
+}
+
+.targets-table thead th {
+  background: #d9d9d9;
+  font-weight: bold;
+}
+
+.targets-table input[type="number"] {
+  width: 60px;
+  padding: 3px 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 0.85rem;
+}
+
+.targets-table input[disabled] {
+  background: #f0f0f0;
+  color: #aaa;
+}
+
+.btn-download {
+  font-size: 1rem;
+  padding: 10px 24px;
+  background: #2a6;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-download:hover {
+  background: #1e8a50;
+}
+
+/* ── Preview page ── */
+#yaml-input {
+  display: block;
+  width: 100%;
+  height: 260px;
+  font-family: monospace;
+  font-size: 0.85rem;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  resize: vertical;
+  margin-bottom: 12px;
+}
+
+.preview-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.parse-error {
+  color: #c00;
+  font-size: 0.85rem;
+  min-height: 1.2em;
 }
 
 /* ── Print ── */

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Preview Program</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4/dist/js-yaml.min.js"></script>
+  </head>
+  <body>
+    <div id="paste-ui">
+      <h1>Preview Program <a href="/" class="nav-link">← Index</a></h1>
+      <textarea id="yaml-input" placeholder="Paste your program YAML here…"></textarea>
+      <div class="preview-actions">
+        <button id="render-btn" class="btn-download">Render Preview</button>
+        <button id="print-btn" class="btn-add" style="display:none">Print</button>
+      </div>
+      <p id="parse-error" class="parse-error"></p>
+    </div>
+    <div id="app"></div>
+    <script type="module" src="app/preview.js"></script>
+  </body>
+</html>

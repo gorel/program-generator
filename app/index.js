@@ -3,7 +3,7 @@ import { calculateStats } from "./stats.js";
 
 export async function renderIndex(movementTargets, exerciseMapping) {
   const app = document.getElementById("app");
-  app.innerHTML = "<h1>Programs</h1>";
+  app.innerHTML = `<h1>Programs <a href="builder.html" class="nav-link">+ New Program</a> <a href="preview.html" class="nav-link">Preview YAML</a></h1>`;
 
   const programList = await loadProgramList();
 
