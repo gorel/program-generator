@@ -82,30 +82,71 @@ tbody tr:nth-child(even) td:not(.inactive) {
   background: #f2f2f2;
 }
 
-/* ── Program index ── */
-.program-link {
-  text-decoration: none;
-  font-size: 1.2rem;
-  font-weight: bold;
-  display: inline-block;
-  margin-bottom: 6px;
+/* ── Index table ── */
+.index-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 16px;
 }
 
-.stats-list {
-  list-style: none;
-  padding: 0;
-  margin: 0 0 24px 0;
-}
-
-.stats-list li {
-  font-size: 0.9rem;
-  margin-bottom: 2px;
-}
-
-.missing {
+.index-table th,
+.index-table td {
+  border: 1px solid #999;
+  padding: 6px 10px;
   font-size: 0.85rem;
-  color: #888;
-  margin-bottom: 24px;
+}
+
+.index-table thead tr:first-child th {
+  background: #d9d9d9;
+  font-weight: bold;
+  text-align: center;
+}
+
+.index-table thead tr:first-child th:first-child {
+  text-align: left;
+}
+
+.index-table th.subheader {
+  background: #ebebeb;
+  font-weight: normal;
+  font-size: 0.75rem;
+  text-align: center;
+  color: #555;
+}
+
+.index-table th.sorted-asc::after  { content: " ↑"; }
+.index-table th.sorted-desc::after { content: " ↓"; }
+
+.cell-good { background: #d4edda; }
+.cell-bad  { background: #f8d7da; }
+
+/* ── Filter panel ── */
+.filter-panel {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.filter-panel label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.75rem;
+  font-weight: bold;
+  gap: 4px;
+}
+
+.filter-panel input,
+.filter-panel select {
+  font-size: 0.85rem;
+  padding: 4px 6px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  width: 90px;
+}
+
+.filter-panel input[type="text"] {
+  width: 140px;
 }
 
 /* ── Print ── */
