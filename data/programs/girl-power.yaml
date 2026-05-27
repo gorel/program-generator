@@ -1,0 +1,75 @@
+program:
+  title: "Girl power"
+
+days:
+  - name: "UPPER"
+    exercises:
+      - name: "Dumbbell Bench Press"
+        sets: 3
+        reps: "8-10"
+      - name: "Dumbbell Shoulder Press"
+        sets: 3
+        reps: "8-10"
+      - name: "Lat Pulldown"
+        sets: 3
+        reps: "8-10"
+      - name: "Dumbbell Tricep Extension"
+        sets: 3
+        reps: "8-10"
+      - name: "Barbell Bent-Over Row"
+        sets: 3
+        reps: "8-10"
+
+  - name: "LOWER"
+    exercises:
+      - name: "Bulgarian Split Squat "
+        sets: 3
+        reps: "8-10"
+      - name: "Barbell RDL"
+        sets: 3
+        reps: "8-10"
+      - name: "Hip Thrust"
+        sets: 3
+        reps: "8-10"
+      - name: "Standing Calf Raise"
+        sets: 3
+        reps: "8-10"
+      - name: "Something for abs"
+        sets: 3
+        reps: "whatever"
+
+  - name: "PUSH"
+    exercises:
+      - name: "Barbell Bench Press"
+        sets: 3
+        reps: "8-10"
+      - name: "Dips"
+        sets: 3
+        reps: "8-10"
+      - name: "Dumbbell Fly"
+        sets: 3
+        reps: "8-10"
+      - name: "Dumbbell Lat Raise"
+        sets: 3
+        reps: "8-10"
+      - name: "Dumbbell Rear Delt Fly"
+        sets: 3
+        reps: "8-10"
+
+  - name: "PULL"
+    exercises:
+      - name: "Deadlift"
+        sets: 3
+        reps: "6-8"
+      - name: "Lat Pulldown"
+        sets: 3
+        reps: "8-10"
+      - name: "EZ-Bar Curl"
+        sets: 3
+        reps: "8-10"
+      - name: "One-Arm Dumbbell Row"
+        sets: 3
+        reps: "8-10"
+      - name: "Something for abs"
+        sets: 3
+        reps: "whatever"
