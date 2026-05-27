@@ -22,7 +22,7 @@ days:
 
   - name: "LOWER"
     exercises:
-      - name: "Bulgarian Split Squat "
+      - name: "Bulgarian Split Squat"
         sets: 3
         reps: "8-10"
       - name: "Barbell RDL"

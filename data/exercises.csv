@@ -15,6 +15,7 @@ Cable Crunch,Abs
 45° Incline Dumbbell Press,Push
 Cable Tricep Pressdown,Extension
 Dumbbell Lat Raise,Shoulders
+Dumbbell Shoulder Press,Shoulders
 Seated Dumbbell Overhead Press,Press
 Ab Wheel Rollout,Abs
 Deadlift,Hinge
@@ -22,6 +23,7 @@ One-Arm Lat Pulldown,Pull
 Incline Dumbbell Curl,Curl
 Chest-Supported Dumbbell Row,Row
 Seated Rear Delt Fly,Shoulders
+Dumbbell Rear Delt Fly,Shoulders
 Bicycles,Abs
 Dips,Push
 Neutral-Grip Chin-Up,Pull
@@ -37,6 +39,7 @@ Close-Grip Bench Press,Extension
 Skull Crusher,Extension
 Rope Tricep Pressdown,Extension
 Dumbbell Tricep Kickback,Extension
+Dumbbell Tricep Extension,Extension
 Bench Dip,Extension
 Lying Tricep Extension,Extension
 Lat Pulldown,Pull
@@ -45,6 +48,7 @@ Chin-Up,Pull
 Cable Pullover,Pull
 Straight-Arm Pulldown,Pull
 Bent-Over Barbell Row,Row
+Barbell Bent-Over Row,Row
 Seated Cable Row,Row
 One-Arm Dumbbell Row,Row
 Pendlay Row,Row
@@ -67,6 +71,7 @@ Reverse Pec Deck,Shoulders
 Face Pull,Shoulders
 Machine Lateral Raise,Shoulders
 Rear Delt Dumbbell Fly,Shoulders
+Dumbbell Fly,Push
 Front Squat,Squat
 Hack Squat,Squat
 Leg Press,Squat
@@ -95,3 +100,4 @@ Decline Sit-Up,Abs
 Dragon Flag,Abs
 Dead Bug,Abs
 V-Up,Abs
+Something for abs,Abs
