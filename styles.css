@@ -393,8 +393,8 @@ tbody tr:nth-child(even) td:not(.inactive):not(.cell-good):not(.cell-bad) {
   }
 
   .day {
-    page-break-after: always;
-    break-after: page;
+    page-break-after: avoid;
+    break-after: avoid;
   }
 
   .day-wrapper {

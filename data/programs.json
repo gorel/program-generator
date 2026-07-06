@@ -1,5 +1,9 @@
 [
   {
+    "id": "7day",
+    "name": "7 day split"
+  },
+  {
     "id": "may2026",
     "name": "May 2026 ULPP"
   },
