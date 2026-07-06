@@ -377,7 +377,7 @@ tbody tr:nth-child(even) td:not(.inactive):not(.cell-good):not(.cell-bad) {
 /* ── Print ── */
 @page {
   size: letter portrait;
-  margin: 0.4in;
+  margin: 0.4in 0.6in;
 }
 
 @media print {
