@@ -2,6 +2,12 @@ export function renderProgram(program) {
   const app = document.getElementById("app");
   app.innerHTML = "";
 
+  if (program.days.length >= 7) {
+    app.classList.add("compact-print");
+  } else {
+    app.classList.remove("compact-print");
+  }
+
   const title = document.createElement("h1");
   title.textContent = program.program.title;
   app.appendChild(title);
