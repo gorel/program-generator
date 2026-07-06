@@ -1,0 +1,92 @@
+program:
+  title: 7-day
+days:
+  - name: Day1
+    exercises:
+      - name: Barbell Squat
+        sets: 3
+        reps: 3-5
+      - name: Overhead Cable Triceps Extension
+        sets: 3
+        reps: 8-10
+      - name: Dumbbell Shoulder Press
+        sets: 3
+        reps: 8-10
+  - name: Day2
+    exercises:
+      - name: Barbell Overhead Press
+        sets: 3
+        reps: 3-5
+      - name: Cable Lateral Raise
+        sets: 3
+        reps: 8-10
+      - name: Cable Crunch
+        sets: 3
+        reps: 12-15
+      - name: Dumbbell Bench Press
+        sets: 3
+        reps: 15-20
+  - name: Day3
+    exercises:
+      - name: Pullups
+        sets: 3
+        reps: 8-10
+      - name: Chest-Supported Dumbbell Row
+        sets: 3
+        reps: 8-10
+      - name: Preacher Curl
+        sets: 3
+        reps: 10-12
+      - name: Wide-Grip Pulldown
+        sets: 3
+        reps: 15-20
+  - name: Day4
+    exercises:
+      - name: Romanian Deadlift
+        sets: 3
+        reps: 6-8
+      - name: Single-Leg Calf Raise
+        sets: 3
+        reps: 12-15
+      - name: Dumbbell Fly
+        sets: 3
+        reps: 10-12
+  - name: Day5
+    exercises:
+      - name: Bent-Over Barbell Row
+        sets: 3
+        reps: 6-8
+      - name: Lat Pulldown
+        sets: 3
+        reps: 8-10
+      - name: Incline Dumbbell Curl
+        sets: 3
+        reps: 8-10
+      - name: Rear Delt Dumbbell Fly
+        sets: 3
+        reps: 15-20
+  - name: Day6
+    exercises:
+      - name: Bulgarian Split Squat
+        sets: 3
+        reps: 6-8
+      - name: Leg Curl
+        sets: 3
+        reps: 8-10
+      - name: Leg Extension
+        sets: 3
+        reps: 8-10
+      - name: Weighted Knee Raises
+        sets: 3
+        reps: 15-20
+  - name: Day7
+    exercises:
+      - name: Barbell Bench Press
+        sets: 3
+        reps: 3-5
+      - name: Dumbbell Lat Raise
+        sets: 3
+        reps: 10-12
+      - name: Cable Tricep Pressdown
+        sets: 3
+        reps: 12-15
