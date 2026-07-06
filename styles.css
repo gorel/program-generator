@@ -420,11 +420,11 @@ tbody tr:nth-child(even) td:not(.inactive):not(.cell-good):not(.cell-bad) {
 
   #app.compact-print h1 {
     font-size: 12pt;
-    margin-bottom: 6pt;
+    margin-bottom: 16pt;
   }
 
   #app.compact-print .day-wrapper {
-    margin-bottom: 8px;
+    margin-bottom: 16px;
   }
 
   #app.compact-print th,
