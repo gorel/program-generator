@@ -12,7 +12,7 @@ Leg Extension,Squat
 Barbell RDL,Hinge
 Standing Calf Raise,Calves
 Cable Crunch,Abs
-45° Incline Dumbbell Press,Push
+45° Incline Dumbbell Press,Press
 Cable Tricep Pressdown,Extension
 Dumbbell Lat Raise,Shoulders
 Dumbbell Shoulder Press,Press
@@ -45,6 +45,7 @@ Lying Tricep Extension,Extension
 Lat Pulldown,Pull
 Wide-Grip Pulldown,Pull
 Chin-Up,Pull
+Dumbbell Pullover,Pull
 Cable Pullover,Pull
 Straight-Arm Pulldown,Pull
 Bent-Over Barbell Row,Row
@@ -88,6 +89,7 @@ Glute Ham Raise,Hinge
 Seated Leg Curl,Hinge
 Lying Leg Curl,Hinge
 Kettlebell Swing,Hinge
+Barbell Calf Raise,Calves
 Seated Calf Raise,Calves
 Leg Press Calf Raise,Calves
 Donkey Calf Raise,Calves

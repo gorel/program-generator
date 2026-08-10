@@ -1,0 +1,101 @@
+program:
+  title: 7-day-revamp
+days:
+  - name: Funsies
+    exercises:
+      - name: Barbell Squat
+        sets: 3
+        reps: 3-5
+      - name: 45° Incline Dumbbell Press
+        sets: 3
+        reps: 8-10
+      - name: Cable Crunch
+        sets: 3
+        reps: 12-15
+      - name: ""
+        sets: 3
+        reps:
+  - name: Pull1
+    exercises:
+      - name: Pullups
+        sets: 3
+        reps: 8-10
+      - name: Chest-Supported Dumbbell Row
+        sets: 3
+        reps: 8-10
+      - name: Preacher Curl
+        sets: 3
+        reps: 10-12
+      - name: Dumbbell Pullover
+        sets: 3
+        reps: 15-20
+  - name: Push1
+    exercises:
+      - name: Barbell Overhead Press
+        sets: 3
+        reps: 3-5
+      - name: Dumbbell Bench Press
+        sets: 3
+        reps: 15-20
+      - name: Cable Lateral Raise
+        sets: 3
+        reps: 8-10
+      - name: Overhead Cable Triceps Extension
+        sets: 3
+        reps: 8-10
+  - name: Legs1
+    exercises:
+      - name: Romanian Deadlift
+        sets: 3
+        reps: 6-8
+      - name: Hip Thrust
+        sets: 3
+        reps: 8-10
+      - name: Single-Leg Calf Raise
+        sets: 3
+        reps: 12-15
+      - name: Leg Curl
+        sets: 3
+        reps: 10-12
+  - name: Pull2
+    exercises:
+      - name: Bent-Over Barbell Row
+        sets: 3
+        reps: 6-8
+      - name: Lat Pulldown
+        sets: 3
+        reps: 8-10
+      - name: Incline Dumbbell Curl
+        sets: 3
+        reps: 8-10
+      - name: Rear Delt Dumbbell Fly
+        sets: 3
+        reps: 15-20
+  - name: Legs2
+    exercises:
+      - name: Bulgarian Split Squat
+        sets: 3
+        reps: 6-8
+      - name: Leg Extension
+        sets: 3
+        reps: 8-10
+      - name: Barbell Calf Raise
+        sets: 3
+        reps: 8-10
+      - name: Weighted Knee Raises
+        sets: 3
+        reps: 15-20
+  - name: Push2
+    exercises:
+      - name: Barbell Bench Press
+        sets: 3
+        reps: 3-5
+      - name: Dumbbell Lat Raise
+        sets: 3
+        reps: 10-12
+      - name: Cable Tricep Pressdown
+        sets: 3
+        reps: 12-15
+      - name: Dumbbell Fly
+        sets: 3
+        reps: 10-12
